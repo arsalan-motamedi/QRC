@@ -1,0 +1,117 @@
+%Quantumnesses
+extraInputs = {'interpreter','latex','fontsize',14};
+dt=.1;
+load('LargeTdata.mat');
+X = X - mean(X);
+sup_mg = X(1:floor(.85*length(X)));
+nt_mg = length(sup_mg);
+
+chunk_length = 200; %input size at each step
+pred_length = 100; %how many samples to predict
+N_chunk = floor(nt_mg/chunk_length)-1;
+output = zeros(chunk_length, N_chunk);
+
+Tspan = (0:chunk_length-1)*dt;
+
+% Osc. parameters
+d = 20;
+a = diag(sqrt(1:d-1),1);
+
+a_0 = 1+1j;
+%rho_0(7,7) = 1;
+X_hat = a+a';
+P_hat =1j*(a-a');
+[XV,XD] = eig(X_hat);
+XDD = diag(XD);
+XD = diag(tanh(XDD));
+
+[PV,PD] = eig(P_hat);
+PDD = diag(PD);
+PD = diag(tanh(PDD));
+theta = pi/2; %rand * pi;
+Observable = cos(theta) *XV * XD * XV' + sin(theta) * PV * PD * PV';
+
+K = 0.05; kappa = [0.05, 0.1, 0.2, 0.3, 0.5, 0.7]; alpha = 1.2; lambda = .1;% .05, .1, 1
+%param = [K, kappa, alpha];
+I = [];
+
+%----- ket 6:
+Quantumness = zeros(1,length(kappa));
+for count = 1:length(kappa)
+param = [K, kappa(count), alpha];
+rho_0=zeros(d,d);
+rho_0(7,7)=1;
+%rho_0(7,7)=1;0);
+clear I;
+I = [];
+for chunk = 1:5
+input = sup_mg(1+(chunk-1)*chunk_length: chunk*chunk_length);
+[T,rho] = ode45(@(t,rho) Quantum_osc(t,rho,Tspan,input,a, param), Tspan, reshape(rho_0,[d^2,1]));
+LJ = LeeJeong(rho);
+LJ = LJ.*(LJ>0);
+I = [I; LJ];
+end
+Quantumness(count) = mean(mean(I));
+end
+
+figure();
+plot(kappa, Quantumness.*(Quantumness>0), '--o', 'LineWidth', 2.0);
+xlabel('$\kappa$', extraInputs{:});
+ylabel('Quantumness', extraInputs{:});
+hold on
+%%
+%----- Cat
+Quantumness = zeros(1,length(kappa));
+for count = 1:length(kappa)
+param = [K, kappa(count), alpha];
+rho_0=state_prep(d,1.2,2,1);
+clear I;
+I = [];
+for chunk = 1:5
+input = sup_mg(1+(chunk-1)*chunk_length: chunk*chunk_length);
+[T,rho] = ode45(@(t,rho) Quantum_osc(t,rho,Tspan,input,a, param), Tspan, reshape(rho_0,[d^2,1]));
+LJ = LeeJeong(rho);
+LJ = LJ.*(LJ>0);
+I = [I; LJ];
+end
+Quantumness(count) = mean(mean(I));
+end
+plot(kappa, Quantumness.*(Quantumness>0), '--o', 'LineWidth', 2.0);
+%%
+%----- Mixed
+Quantumness = zeros(1,length(kappa));
+for count = 1:length(kappa)
+param = [K, kappa(count), alpha];
+rho_0=state_prep(d,1.2,2,0);
+clear I;
+I = [];
+for chunk = 1:5
+input = sup_mg(1+(chunk-1)*chunk_length: chunk*chunk_length);
+[T,rho] = ode45(@(t,rho) Quantum_osc(t,rho,Tspan,input,a, param), Tspan, reshape(rho_0,[d^2,1]));
+LJ = LeeJeong(rho);
+LJ = LJ.*(LJ>0);
+I = [I; LJ];
+end
+Quantumness(count) = mean(mean(I));
+end
+plot(kappa, Quantumness.*(Quantumness>0), '--o', 'LineWidth', 2.0);
+%%
+%----- Coherent
+Quantumness = zeros(1,length(kappa));
+for count = 1:length(kappa)
+param = [K, kappa(count), alpha];
+rho_0=coherent_state(1.2,d);
+clear I;
+I = [];
+for chunk = 1:5
+input = sup_mg(1+(chunk-1)*chunk_length: chunk*chunk_length);
+[T,rho] = ode45(@(t,rho) Quantum_osc(t,rho,Tspan,input,a, param), Tspan, reshape(rho_0,[d^2,1]));
+LJ = LeeJeong(rho);
+LJ = LJ.*(LJ>0);
+I = [I; LJ];
+end
+Quantumness(count) = mean(mean(I));
+end
+plot(kappa, Quantumness.*(Quantumness>0), '--o', 'LineWidth', 2.0);
+%%
+legend('ket 6', 'Cat', 'Mixed', 'Coherent');
