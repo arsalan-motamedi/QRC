@@ -25,6 +25,6 @@ In Figure 2 folder, you can find the main learnning codes, for different tasks, 
 
 We use a set of 140 random states in the training of the reservoir, and examine the correlations between the quantumness of the states and the learning performance. Using figures below, we deduce that quantumness is indeed a game-changer! We investigating relations between the complexity parameters and the training performance. We observe no strong correlation between the dimensionality and the performance accuracy (first pannel from the left). We see no strong correlation between dimensionalty and the training error (second pannel from the left). We observe a strong correlation between quantumness and dimensionality (third pannel from the left). 
 
-Furthermore, we conducted a hypothesis test to measure the effectiveness of quantumness, which yielded a p-value of order $10^-4$, thus confirming the efficacy of quantumness in our study.
+Furthermore, we conducted a hypothesis test to measure the effectiveness of quantumness, which yielded a p-value of order $10^{-4}$, thus confirming the efficacy of quantumness in our study.
 
 <img src="https://user-images.githubusercontent.com/94669474/229361116-9d75010a-7b5d-46d6-9bbe-f84dd5c50e55.jpg" width=50% height=50%> <img src="https://user-images.githubusercontent.com/94669474/229361350-fc312dcc-84b4-4f0d-9fae-50d235061bb6.jpg" width=35% height=35%>
