@@ -7,4 +7,4 @@ As a quick introduction to our work, we examine the effects of quantumness in a 
 
 1. In Figure 2 folder, you can find the main learnning codes, for different tasks, such as learning a Mackey-Glass or a Rossler dynamics. 
 
-![MG and Rossler training](https://github.com/arsalan-motamedi/QRC/blob/main/Fig%202/MackeyGlass-MainTask/MG-Pred.pdf)
+![MG and Rossler training](./Fig%202/MackeyGlass-MainTask/MG-Pred.pdf)
