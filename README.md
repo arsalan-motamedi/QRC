@@ -25,5 +25,4 @@ In Figure 2 folder, you can find the main learnning codes, for different tasks, 
 
 We use a set of 140 random states in the training of the reservoir, and examine the correlations between the quantumness of the states and the learning performance. Using figures below, we deduce that quantumness is indeed a game-changer!
 
-<img src="https://user-images.githubusercontent.com/94669474/229361116-9d75010a-7b5d-46d6-9bbe-f84dd5c50e55.jpg" width=50% height=50%>
-<img src="https://user-images.githubusercontent.com/94669474/229361350-fc312dcc-84b4-4f0d-9fae-50d235061bb6.jpg" width=30% height=30%>
+<img src="https://user-images.githubusercontent.com/94669474/229361116-9d75010a-7b5d-46d6-9bbe-f84dd5c50e55.jpg" width=50% height=50%> <img src="https://user-images.githubusercontent.com/94669474/229361350-fc312dcc-84b4-4f0d-9fae-50d235061bb6.jpg" width=35% height=35%>
