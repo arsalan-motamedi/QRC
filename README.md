@@ -21,7 +21,7 @@ In Figure 2 folder, you can find the main learnning codes, for different tasks, 
 
 <img src="https://user-images.githubusercontent.com/94669474/229360384-d3267cb2-dc40-40e9-8990-a1b5d8d5f643.jpg" width=40% height=40%>
 
-## The effect of qusntumness
+## The effect of quantumness
 
 We use a set of 140 random states in the training of the reservoir, and examine the correlations between the quantumness of the states and the learning performance. Using figures below, we deduce that quantumness is indeed a game-changer! We investigating relations between the complexity parameters and the training performance. We observe no strong correlation between the dimensionality and the performance accuracy (first pannel from the left). We see no strong correlation between dimensionalty and the training error (second pannel from the left). We observe a strong correlation between quantumness and dimensionality (third pannel from the left). 
 
