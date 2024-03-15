@@ -56,6 +56,8 @@ mrho = zeros(length(dims),Cmax, d^2);
 Tspan = (0:chunk_length-1)*dt;
 for dim = 1:length(dims)
 
+Er = zeros(length(dims),Cmax);
+
 for count = 1:Cmax
 A = rand(d,d);
 psi = randn(dims(dim),1) + 1j* randn(dims(dim),1);
