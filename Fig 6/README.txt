@@ -1,1 +1,0 @@
-Run Main.m to get the R-value between the quantumness and training error. Then, run FinalPlot.m to get the plots.
