@@ -25,5 +25,6 @@ In Figure 2 folder, you can find the main learnning codes, for different tasks, 
 
 We use a set of 35 random states and 30 different hyperparameters in the training of the reservoir, and examine the interplay between the quantumness of the reservoir and the learning performance. Using figures below, we deduce that quantumness is indeed a game-changer! We first note that a more quantum state 'can' improve the performance. We furthermore, identify conditions on our hyperparameters that give rise to the optimal performance, and further, we discuss that these results match intuition. Please read [our paper](https://arxiv.org/abs/2304.03462) for a detailed discussion.
 
+![AllData_page-0001](https://github.com/arsalan-motamedi/QRC/assets/94669474/0cb6421f-d965-4e4d-ab0e-f674dc9b29ca)
 
-<img src="https://user-images.githubusercontent.com/94669474/229361116-9d75010a-7b5d-46d6-9bbe-f84dd5c50e55.jpg" width=50% height=50%> <img src="https://user-images.githubusercontent.com/94669474/229361350-fc312dcc-84b4-4f0d-9fae-50d235061bb6.jpg" width=35% height=35%>
+
