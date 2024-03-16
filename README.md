@@ -4,7 +4,7 @@ Welcome to the GitHub repository dedicated to the paper entitled "Correlations B
 
 We have made the decision to share the code used in our research with you. Please feel free to reach out to us if you have any questions or comments regarding the contents of this repository.
 
-To give you a brief overview of our work, we investigate the impact of quantumness in a reservoir computing task. Our reservoir consists of a simple Kerr oscillator, and we focus on predicting Mackey-Glass time-series. Our results suggest that quantumness could be a valuable resource in the learning process. For more details, please refer to [the paper](https://google.com).
+To give you a brief overview of our work, we investigate the impact of quantumness in a reservoir computing task. Our reservoir consists of a simple Kerr oscillator, and we focus on predicting Mackey-Glass time-series. Our results suggest that quantumness could be a valuable resource in the learning process. For more details, please refer to [the paper](https://arxiv.org/abs/2304.03462).
 
 ## Learning Performance
 In Figure 2 folder, you can find the main learnning codes, for different tasks, such as learning a Mackey-Glass or a Rossler dynamics. Below is the training result for the Mackey-Glass.
@@ -23,8 +23,7 @@ In Figure 2 folder, you can find the main learnning codes, for different tasks, 
 
 ## The effect of quantumness
 
-We use a set of 140 random states in the training of the reservoir, and examine the correlations between the quantumness of the states and the learning performance. Using figures below, we deduce that quantumness is indeed a game-changer! We investigating relations between the complexity parameters and the training performance. We observe no strong correlation between the dimensionality and the performance accuracy (first pannel from the left). We see no strong correlation between dimensionalty and the training error (second pannel from the left). We observe a strong correlation between quantumness and dimensionality (third pannel from the left). 
+We use a set of 35 random states and 30 different hyperparameters in the training of the reservoir, and examine the interplay between the quantumness of the reservoir and the learning performance. Using figures below, we deduce that quantumness is indeed a game-changer! We first note that a more quantum state 'can' improve the performance. We furthermore, identify conditions on our hyperparameters that give rise to the optimal performance, and further, we discuss that these results match intuition. Please read [our paper](https://arxiv.org/abs/2304.03462) for a detailed discussion.
 
-Furthermore, we conducted a hypothesis test to measure the effectiveness of quantumness, which yielded a p-value of order $10^{-4}$, thus confirming the efficacy of quantumness in our study.
 
 <img src="https://user-images.githubusercontent.com/94669474/229361116-9d75010a-7b5d-46d6-9bbe-f84dd5c50e55.jpg" width=50% height=50%> <img src="https://user-images.githubusercontent.com/94669474/229361350-fc312dcc-84b4-4f0d-9fae-50d235061bb6.jpg" width=35% height=35%>
